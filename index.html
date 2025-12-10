@@ -1,0 +1,82 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>北京奥运城市发展促进会 - 2026新年贺卡</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="libs/modernizr-2.8.3.min.js"></script>
+    <script src="libs/jquery-1.12.0.min.js"></script>
+</head>
+<body>
+<div class="app-body">
+    <div id="musicSwitch" class="m-btn"></div>
+    <div class="ele fade" style="width: 110px; left: 50px; top: 40px;"><img src="img/001.png"/></div>
+    <div class="ele fade" style="width: 60px; left: 50px; top: 80px;"><img src="img/002.png"/></div>
+    <div class="ele fade" style="width: 60px; left: 130px; top: 80px;"><img src="img/003.png"/></div>
+    <div class="ele fade" style="width: 60px; left: 50px; top: 120px;"><img src="img/004.png"/></div>
+    <div class="ele m4" style="width: 100px; left: 50px; top: 160px;"><img src="img/017.png"/></div>
+
+    <div class="ele m1" style="width: 160px; right: -40px; top: -40px;"><img src="img/005.png"/></div>
+    <div class="ele m3" style="width: 600px; left: -100px; bottom: 160px;"><img src="img/014.png"/></div>
+    <div class="ele m2" style="width: 380px; left: 0; top: 350px;"><img src="img/009.png"/></div>
+
+    <div class="ele loop" style="width: 80px; left: 20px; top: -60px;"><img src="img/006.png"/></div>
+    <div class="ele loop" style="width: 80px; right: -10px; top: 140px;"><img src="img/007.png"/></div>
+    <div class="ele loop" style="width: 100px; left: 100px; top: 300px;"><img src="img/008.png"/></div>
+
+    <div class="ele loop4" style="width: 80px; right: -10px; top: 290px;"><img src="img/010.png"/></div>
+    <div class="ele loop4" style="width: 80px; left: 20px; bottom: 400px;"><img src="img/011.png"/></div>
+    <div class="ele loop4" style="width: 60px; left: 150px; top: 260px;"><img src="img/012.png"/></div>
+    <div class="ele loop4" style="width: 60px; left: 240px; top: 140px;"><img src="img/013.png"/></div>
+</div>
+<div class="bar"><img src="img/015.png" width="240" /></div>
+<audio id="m" autoplay="autoplay" loop="loop" src="bg1.mp3"></audio>
+
+<script>
+    //
+    var media = document.getElementById("m");
+    document.addEventListener('WeixinJSBridgeReady', function () {
+        media.play()
+    });
+    //
+    $(function () {
+        //
+        $(".fade").each(function (i) {
+            $(this).css("animation-delay", i * 200 + "ms")
+        });
+        $(".loop").each(function () {
+            $(this).css("animation-delay", Math.round(Math.random() * 5) + "s")
+        });
+        $(".loop4").each(function () {
+            $(this).css("animation-delay", Math.round(Math.random() * 1000 + 3000) + "ms")
+        });
+        setTimeout(function() { $(".m2").addClass("loop2") }, 4000);
+        setTimeout(function() { $(".m3").addClass("loop3") }, 4500);
+        //
+        $("#musicSwitch").click(function () {
+            $(this).toggleClass("m-motion");
+            if (media.paused) media.play();
+            else media.pause();
+        });
+        //
+        $(window).resize(function () {
+            var ww = $(this).width(), wh = $(this).height();
+            var pw = $('.app-body').width(), ph = $('.app-body').height();
+            var flip = wh < ww && false;
+            var deg = flip ? '90deg' : '0';
+            var ratio = flip ? Math.min(ww / ph, wh / pw) : Math.min(ww / pw, wh / ph);
+            $('.app-body').css({
+                top: Math.round((wh - ph) / 2),
+                left: Math.round((ww - pw) / 2),
+                transform: 'rotate(' + deg + ') scale(' + ratio + ')'
+            });
+        }).resize();
+    });
+</script>
+</body>
+</html>

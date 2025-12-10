@@ -1,0 +1,71 @@
+
+html, body { height: 100%; overflow: hidden; background: white url("../img/016.jpg") no-repeat center top / contain;}
+
+.app-body { height: 800px; width: 390px; position: relative; }
+.m-btn { position: absolute; right: 10px; top: 10px; width: 20px; height: 20px; border: 2px solid white; border-radius: 50%;}
+.m-btn { background: black url("../img/switch.png") 50% 50%/100% 100% no-repeat; opacity: 0.5; z-index: 99;}
+
+.ele { position: absolute }
+.ele img { width: 100%; }
+.bar { position: absolute; width: 100%; left: 0; bottom: 0; padding: 30px 0; text-align: center }
+
+.m-btn { animation: key-btn 600ms ease infinite; }
+.fade { animation: key1 .5s ease-out both; }
+.loop { animation: key2 10s infinite both; }
+.m1 { animation: key3 1s ease 2s both; }
+.m2 { animation: key4 1s ease 1s both; filter: drop-shadow(2px 2px 6px gray) }
+.m3 { animation: key5 1s ease 1.1s both; }
+.m4 { animation: key6 .5s ease 2s both; filter: sepia(1) saturate(10); }
+
+.loop2 { animation: key7 10s linear infinite; }
+.loop3 { animation: key8 10s linear infinite; }
+.loop4 { animation: key9 5s ease both infinite; }
+
+
+@keyframes key-btn {
+    0% { transform: scale(1);}
+    50% { transform: scale(1.1);}
+    100% { transform: scale(1);}
+}
+@keyframes key1 {
+    0% { transform: scale(0.5); opacity: 0 }
+    80% { transform: scale(1.1) }
+    100% { transform: scale(1); opacity: 1 }
+}
+@keyframes key2 {
+    0% { transform: scale(0.5); opacity: 0 }
+    20% { transform: scale(1); opacity: 1 }
+    80% { transform: scale(1.5); opacity: 1 }
+    100% { transform: scale(3); opacity: 0 }
+}
+@keyframes key3 {
+    from { transform: translateY(-100px); opacity: 0 }
+}
+@keyframes key4 {
+    from { transform: translateX(-100px); opacity: 0 }
+}
+@keyframes key5 {
+    from { transform: translateX(100px); opacity: 0 }
+}
+@keyframes key6 {
+    from { transform: scale(1.3); opacity: 0 }
+}
+@keyframes key7 {
+    25% { transform: translate(5px, 5px) rotate(-5deg) }
+    50% { transform: translate(0px, 10px) rotate(0deg) }
+    75% { transform: translate(-5px, 5px) rotate(5deg) }
+}
+@keyframes key8 {
+    25% { transform: translate(-5px, 5px) rotate(5deg) }
+    50% { transform: translate(0px, 10px) rotate(0deg) }
+    75% { transform: translate(5px, 5px) rotate(-5deg) }
+}
+@keyframes key9 {
+    0% { transform: scale(0); opacity: 0 }
+    10% { transform: scale(1); opacity: 1 }
+    95% { opacity: 1 }
+    100% { transform: scale(1.2); opacity: 0 }
+}
+
+
+
