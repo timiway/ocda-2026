@@ -17,7 +17,7 @@ html, body { height: 100%; overflow: hidden; background: white url("../img/016.j
 .m3 { animation: key5 1s ease 1.1s both; }
 .m4 { animation: key6 .5s ease 2s both; filter: sepia(1) saturate(10); }
 
-.loop2 { animation: key7 10s linear infinite; }
+.loop2 { animation: key7 6s linear infinite; }
 .loop3 { animation: key8 10s linear infinite; }
 .loop4 { animation: key9 5s ease both infinite; }
 
@@ -51,9 +51,9 @@ html, body { height: 100%; overflow: hidden; background: white url("../img/016.j
     from { transform: scale(1.3); opacity: 0 }
 }
 @keyframes key7 {
-    25% { transform: translate(5px, 5px) rotate(-5deg) }
-    50% { transform: translate(0px, 10px) rotate(0deg) }
-    75% { transform: translate(-5px, 5px) rotate(5deg) }
+    25% { transform: translate(3px, -10px) }
+    50% { transform: translate(0px, 10px) }
+    75% { transform: translate(-3px, -10px) }
 }
 @keyframes key8 {
     25% { transform: translate(-5px, 5px) rotate(5deg) }
